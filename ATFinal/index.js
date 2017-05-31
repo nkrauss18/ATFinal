@@ -34,22 +34,26 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html')
 });
 
-io.on('connect', function(socket){
-  console.log('Connected')
+io
+	.on('connection', socketioJwt.authorize({
+		secret: process.env.AUTH0_CLIENT_SECRET,
+		timeout: 15000 // 15 seconds to send the authentication message
+	}))
+	.on('authenticated', function(socket){
+		console.log('connected & authenticated: ' + JSON.stringify(socket.decoded_token));
+    socket.on('card', function(new_card) {
+      Card.create({
+        title: new_card[0],
+        content: new_card[1],
+      },function(err,card){
+        if(err){
+          throw(err);
+        }
+        console.log(card);
+      });
+      });
+	});
 
-  socket.on('card', function(new_card) {
-    socket.broadcast.emit('card', new_card)
-    Card.create({
-      title: new_card[0],
-      content: new_card[1],
-    },function(err,card){
-      if(err){
-        throw(err);
-      }
-      console.log(card);
-    });
-    });
-  })
 
 
 

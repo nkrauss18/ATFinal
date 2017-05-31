@@ -1,360 +1,322 @@
 <!DOCTYPE html>
 <html>
 
- <head>
-  <!--Import Google Icon Font-->
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-  <link type="text/css" rel="stylesheet" href="css/materialize-colorpicker.min.css">
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- </head>
+<head>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/materialize-colorpicker.min.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 
- <body>
-  <nav class="nav-extended blue">
-   <div class="nav-wrapper">
-    <a href="#" class="brand-logo">&nbsp;&nbsp;Keep</a>
-    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-     <li><a href="#">About</a></li>
-     <li><a href="#">Help</a></li>
-     <li><a id='loginbutton' href="#">Login</a></li>
-    </ul>
-    <ul class="side-nav" id="mobile-demo">
-     <li><a href="#">About</a></li>
-     <li><a href="#">Help</a></li>
-     <li><a id='loginbutton' href="#">Login</a></li>
-    </ul>
-   </div>
-   <div class="nav-content">
-    <ul class="tabs tabs-transparent">
-     <li class="tab"><a class="active" href="#notebook-tab">Visualize</a></li>
-     <li class="tab"><a href="#list-tab">List View</a></li>
-     <li class="tab"><a href="#outline-tab">Outline</a></li>
-    </ul>
-   </div>
-  </nav>
+<body>
+    <nav class="nav-extended blue">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">&nbsp;&nbsp;Keep</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a id='loginbutton' href="#">Login</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a id='loginbutton' href="#">Login</a></li>
+            </ul>
+        </div>
+        <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+                <li class="tab"><a class="active" href="#notebook-tab">Visualize</a></li>
+                <li class="tab"><a href="#list-tab">List View</a></li>
+                <li class="tab"><a href="#outline-tab">Outline</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <div id="notebook-tab" class="col s12 row" style="height:100% !important;">
+    <div id="notebook-tab" class="col s12 row" style="height:100% !important;">
 
-   <div class="fixed-action-btn">
-    <a class="btn-floating btn-large purple">
-     <i class="large material-icons">add</i>
-    </a>
-    <ul>
-     <li><a class="btn-floating blue modal-trigger" href="#modal3"><i class="material-icons">folder</i></a></li>
-     <li><a class="btn-floating green modal-trigger" href="#modal1"><i class="material-icons">library_books</i></a></li>
-    </ul>
-   </div>
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large purple">
+                <i class="large material-icons">add</i>
+            </a>
+            <ul>
+                <li><a class="btn-floating blue modal-trigger" href="#modal3"><i class="material-icons">folder</i></a></li>
+                <li><a class="btn-floating green modal-trigger" href="#modal1"><i class="material-icons">library_books</i></a></li>
+            </ul>
+        </div>
 
-   <!-- <div class="col s3">
+        <!-- <div class="col s3">
 
    </div> -->
 
-   <style>
-    #vis-container {
-     height: 70vh;
-     !important;
-     width: 100%;
-     overflow: hidden;
-    }
+        <style>
+            #vis-container {
+                height: 70vh;
+                !important;
+                width: 100%;
+                overflow: hidden;
+            }
 
-    #vis {
-     height: 1500px;
-     width: 1500px;
-     /*border: 3px solid #7F8C8D;*/
-     -webkit-box-shadow: inset 0px 0px 58px 12px rgba(127, 140, 141, 1);
-     -moz-box-shadow: inset 0px 0px 58px 12px rgba(127, 140, 141, 1);
-     box-shadow: inset 0px 0px 58px 12px rgba(127, 140, 141, 1);
-     background-color: #95A5A6;
-    }
+            #vis {
+                height: 1500px;
+                width: 1500px;
+                /*border: 3px solid #7F8C8D;*/
+                -webkit-box-shadow: inset 0px 0px 58px 12px rgba(127, 140, 141, 1);
+                -moz-box-shadow: inset 0px 0px 58px 12px rgba(127, 140, 141, 1);
+                box-shadow: inset 0px 0px 58px 12px rgba(127, 140, 141, 1);
+                background-color: #95A5A6;
+            }
+        </style>
 
-   </style>
+        <div id="vis-container" class="grey">
+            <div id="vis" class="col s12" style="">
+                <div id='pls' class="row" style="height:100% !important;">
 
-   <div id="vis-container" class="grey">
-    <div id="vis" class="col s12" style="">
-     <div id='pls' class="row" style="height:100% !important;">
+                </div>
+            </div>
+        </div>
 
-     </div>
     </div>
-   </div>
-
-  </div>
-  <!-- notebook tab -->
-  <div id="outline-tab" class="col s12">
-   <div class="container">
-    <img src="img/construction.png" /></div>
-  </div>
+    <!-- notebook tab -->
+    <div id="outline-tab" class="col s12">
+        <div class="container">
+            <img src="img/construction.png" /></div>
+    </div>
 
 
 
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-   <div class="modal-content s6">
-    <h4>Edit Card</h4>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content s6">
+            <h4>Edit Card</h4>
 
-    <form class="" id="submitty" onsubmit="return false">
-     <div class="row">
-      <div class="input-field col s12">
-       <i class="material-icons prefix">description</i>
-       <textarea name="Title" id="icon_prefix2" class="materialize-textarea" data-length="1024"></textarea>
-       <label for="icon_prefix2">Title</label>
-      </div>
-      <div class="input-field col s12">
-       <i class="material-icons prefix">subject</i>
-       <input name="Content" id="icon_prefix" type="text" class="validate">
-       <label for="icon_prefix">Content</label>
-      </div>
-      <div class="input-field col s12">
-       <select name="group">
+            <form class="" id="submitty" onsubmit="return false">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">description</i>
+                        <textarea name="Title" id="icon_prefix2" class="materialize-textarea" data-length="1024"></textarea>
+                        <label for="icon_prefix2">Title</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">subject</i>
+                        <input name="Content" id="icon_prefix" type="text" class="validate">
+                        <label for="icon_prefix">Content</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <select name="group">
       <option value="" disabled selected>Select a Group</option>
       <option value="1">As I Lay Dying</option>
       <option value="2">Pygmalion</option>
       <option value="3">Heart of Darkness</option>
     </select>
-       <label>Group</label>
-      </div>
+                        <label>Group</label>
+                    </div>
 
-      <div class="input-field col s12">
-       <input name="color" autocomplete="" type="text" id="colorpicker" value="#5367ce" />
-       <label>Color</label>
-      </div>
-     </div>
-     <input name="id" type="hidden" value="4c3" />
-    </form>
-   </div>
-   <div class="modal-footer">
-    <a href="#!" class="left model-action modal-close waves-effect waves-purple btn-flat">Cancel</a>
-    <a href="#!" id="save" class="modal-action modal-close waves-effect waves-green btn-flat">Save</a>
-   </div>
-  </div>
+                    <div class="input-field col s12">
+                        <input name="color" autocomplete="" type="text" id="colorpicker" value="#5367ce" />
+                        <label>Color</label>
+                    </div>
+                </div>
+                <input name="id" type="hidden" value="4c3" />
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="left model-action modal-close waves-effect waves-purple btn-flat">Cancel</a>
+            <a href="#!" id="save" class="modal-action modal-close waves-effect waves-green btn-flat">Save</a>
+        </div>
+    </div>
 
-  <!-- Modal Structure -->
-  <div id="modal2" class="modal">
+    <!-- Modal Structure -->
+    <div id="modal2" class="modal">
 
-  </div>
+    </div>
 
-  <div id="modal3" class="modal">
-   <div class="modal-content s6">
-    <h4> New Folder </h4>
-    <form action="/" method="POST" class="col s12">
-     <input type="text" name="folderName" />
-    </form>
-   </div>
-   <div class="modal-footer">
-    <a href="#!" class="left model-action modal-close waves-effect waves-purple btn-flat">Cancel</a>
-    <a href="#!" id="save" class="modal-action modal-close waves-effect waves-green btn-flat">Save</a>
-   </div>
-  </div>
+    <div id="modal3" class="modal">
+        <div class="modal-content s6">
+            <h4> New Folder </h4>
+            <form action="/" method="POST" class="col s12">
+                <input type="text" name="folderName" />
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="left model-action modal-close waves-effect waves-purple btn-flat">Cancel</a>
+            <a href="#!" id="save" class="modal-action modal-close waves-effect waves-green btn-flat">Save</a>
+        </div>
+    </div>
 
-  <!--Import jQuery before materialize.js-->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script type="text/javascript" src="js/materialize.min.js"></script>
-  <script type="text/javascript" src="js/materialize-colorpicker.min.js"></script>
-  <script src="js/interact.js"></script>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/materialize-colorpicker.min.js"></script>
+    <script src="js/interact.js"></script>
 
-  <script>
-   $(document).ready(function()
-   {
-    $('select').material_select();
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal').modal();
-    $('#colorpicker').colorpicker();
-    $("#save").click(function()
-    {
-     $("#submitty").submit();
-    })
-    $(".button-collapse").sideNav();
-    Materialize.updateTextFields()
+    <script>
+        $(document).ready(function() {
+            $('select').material_select();
+            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+            $('.modal').modal();
+            $('#colorpicker').colorpicker();
+            $("#save").click(function() {
+                $("#submitty").submit();
+            })
+            $(".button-collapse").sideNav();
+            Materialize.updateTextFields()
 
-    interact('#vis')
-     .draggable(
-     {
-      // enable inertial throwing
-      inertia: true,
-      // keep the element within the area of it's parent
-      // call this function on every dragmove event
-      onmove: bg_dragMoveListener
-     });
+            interact('#vis')
+                .draggable({
+                    // enable inertial throwing
+                    inertia: true,
+                    // keep the element within the area of it's parent
+                    // call this function on every dragmove event
+                    onmove: bg_dragMoveListener
+                });
 
-    interact('.draggable')
-     .draggable(
-     {
-      // enable inertial throwing
-      inertia: false,
-      snap:
-      {
-       targets: [
-        interact.createSnapGrid(
-        {
-         x: 30,
-         y: 30
-        })
-       ],
-       range: Infinity,
-       relativePoints: [
-       {
-        x: 0,
-        y: 0
-       }]
-      },
-      // keep the element within the area of it's parent
-      restrict:
-      {
-       restriction: "parent",
-       endOnly: true,
-       elementRect:
-       {
-        top: 0,
-        left: 0,
-        bottom: 1,
-        right: 1
-       }
-      },
-      // enable autoScroll
-      autoScroll: true,
+            interact('.draggable')
+                .draggable({
+                    // enable inertial throwing
+                    inertia: false,
+                    snap: {
+                        targets: [
+                            interact.createSnapGrid({
+                                x: 30,
+                                y: 30
+                            })
+                        ],
+                        range: Infinity,
+                        relativePoints: [{
+                            x: 0,
+                            y: 0
+                        }]
+                    },
+                    // keep the element within the area of it's parent
+                    restrict: {
+                        restriction: "parent",
+                        endOnly: true,
+                        elementRect: {
+                            top: 0,
+                            left: 0,
+                            bottom: 1,
+                            right: 1
+                        }
+                    },
+                    // enable autoScroll
+                    autoScroll: true,
 
-      // call this function on every dragmove event
-      onmove: dragMoveListener,
-      onend: updatePos
-     });
+                    // call this function on every dragmove event
+                    onmove: dragMoveListener,
+                    onend: updatePos
+                });
 
-    function dragMoveListener(event)
-    {
-     var target = event.target,
-      // keep the dragged position in the data-x/data-y attributes
-      x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-      y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+            function dragMoveListener(event) {
+                var target = event.target,
+                    // keep the dragged position in the data-x/data-y attributes
+                    x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+                    y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
 
-     // translate the element
-     target.style.webkitTransform =
-      target.style.transform =
-      'translate(' + x + 'px, ' + y + 'px)';
+                // translate the element
+                target.style.webkitTransform =
+                    target.style.transform =
+                    'translate(' + x + 'px, ' + y + 'px)';
 
-     // update the posiion attributes
-     target.setAttribute('data-x', x);
-     target.setAttribute('data-y', y);
+                // update the posiion attributes
+                target.setAttribute('data-x', x);
+                target.setAttribute('data-y', y);
 
 
-    }
+            }
 
-    function updateVisContainerDimensions()
-    {
-     var d = document.getElementById("vis-container");
-     var s = window.getComputedStyle(d);
-     vis_container_w = parseFloat(s.width);
-     vis_container_h = parseFloat(s.height);
-    }
+            function updateVisContainerDimensions() {
+                var d = document.getElementById("vis-container");
+                var s = window.getComputedStyle(d);
+                vis_container_w = parseFloat(s.width);
+                vis_container_h = parseFloat(s.height);
+            }
 
-    updateVisContainerDimensions();
+            updateVisContainerDimensions();
 
-    function bg_dragMoveListener(event)
-    {
-     var target = event.target,
-      // keep the dragged position in the data-x/data-y attributes
-      x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-      y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+            function bg_dragMoveListener(event) {
+                var target = event.target,
+                    // keep the dragged position in the data-x/data-y attributes
+                    x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+                    y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
 
-     if (x > 0) x = 0;
-     if (x + 1500 < vis_container_w) x = vis_container_w - 1500;
+                if (x > 0) x = 0;
+                if (x + 1500 < vis_container_w) x = vis_container_w - 1500;
 
-     if (y > 0) y = 0;
-     if (y + 1500 < vis_container_h) y = vis_container_h - 1500;
+                if (y > 0) y = 0;
+                if (y + 1500 < vis_container_h) y = vis_container_h - 1500;
 
-     // translate the element
-     target.style.webkitTransform =
-      target.style.transform =
-      'translate(' + x + 'px, ' + y + 'px)';
+                // translate the element
+                target.style.webkitTransform =
+                    target.style.transform =
+                    'translate(' + x + 'px, ' + y + 'px)';
 
-     // update the posiion attributes
-     target.setAttribute('data-x', x);
-     target.setAttribute('data-y', y);
+                // update the posiion attributes
+                target.setAttribute('data-x', x);
+                target.setAttribute('data-y', y);
 
 
-    }
+            }
 
-    function updatePos(event)
-    {
-     var target = event.target,
-      // keep the dragged position in the data-x/data-y attributes
-      x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-      y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
-     $.post('/pos',
-     {
-      id: target.getAttribute('data-card-id'),
-      x: x,
-      y: y,
-      timestamp: new Date()
-     }, function(data, status)
-     { //throwaway
-     });
-    }
+            function updatePos(event) {
+                var target = event.target,
+                    // keep the dragged position in the data-x/data-y attributes
+                    x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+                    y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+                $.post('/pos', {
+                    id: target.getAttribute('data-card-id'),
+                    x: x,
+                    y: y,
+                    timestamp: new Date()
+                }, function(data, status) { //throwaway
+                });
+            }
 
-    // this is used later in the resizing and gesture demos
-    window.dragMoveListener = dragMoveListener;
+            // this is used later in the resizing and gesture demos
+            window.dragMoveListener = dragMoveListener;
 
-    (function()
-    {
-     var throttle = function(type, name, obj)
-     {
-      obj = obj || window;
-      var running = false;
-      var func = function()
-      {
-       if (running)
-       {
-        return;
-       }
-       running = true;
-       requestAnimationFrame(function()
-       {
-        obj.dispatchEvent(new CustomEvent(name));
-        running = false;
-       });
-      };
-      obj.addEventListener(type, func);
-     };
+            (function() {
+                var throttle = function(type, name, obj) {
+                    obj = obj || window;
+                    var running = false;
+                    var func = function() {
+                        if (running) {
+                            return;
+                        }
+                        running = true;
+                        requestAnimationFrame(function() {
+                            obj.dispatchEvent(new CustomEvent(name));
+                            running = false;
+                        });
+                    };
+                    obj.addEventListener(type, func);
+                };
 
-     /* init - you can init any event */
-     throttle("resize", "optimizedResize");
-    })();
+                /* init - you can init any event */
+                throttle("resize", "optimizedResize");
+            })();
 
-    // handle event
-    window.addEventListener("optimizedResize", function()
-    {
-     updateVisContainerDimensions();
-    });
-   });
-
-  </script>
-  <script src="https://cdn.auth0.com/js/lock/10.16/lock.min.js"></script>
-  <script src="https://cdn.auth0.com/js/auth0/8.7/auth0.min.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
-  <script>
-
-    var webAuth = new auth0.WebAuth({
-      domain: 'njkrauss1.auth0.com',
-      clientID: 'KKy0mLFfms63O4uMKL6sa9iNEfPea6oY',
-      redirectUri: window.location.href,
-      audience: 'https://njkrauss1.auth0.com/userinfo',
-      responseType: 'token id_token',
-      scope: 'openid'
-    });
-
-    var loginBtn = document.getElementById('loginbutton');
-
-    loginBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      webAuth.authorize();
-    });
-  let socket = io();
-  var userProfile;
+            // handle event
+            window.addEventListener("optimizedResize", function() {
+                updateVisContainerDimensions();
+            });
+        });
+    </script>
+    <script src="https://cdn.auth0.com/js/lock/10.16/lock.min.js"></script>
+    <script src="https://cdn.auth0.com/js/auth0/8.7/auth0.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var userProfile;
         var userToken;
-        var lock = new Auth0Lock('#{env.AUTH0_CLIENT_ID}', '#{env.AUTH0_DOMAIN}');
+        var lock = new Auth0Lock('KKy0mLFfms63O4uMKL6sa9iNEfPea6oY', 'njkrauss1.auth0.com');
         var id_token = localStorage.getItem('id_token');
+        console.log(id_token);
 
         lock.on('authenticated', function(authResult) {
+            console.log("ere");
             lock.getProfile(authResult.idToken, function(error, profile) {
                 if (error) {
                     // Handle error
@@ -366,40 +328,50 @@
                 userProfile = profile;
                 id_token = authResult.idToken;
                 openCards();
+
             });
         });
 
         if (id_token) {
-            lock.getProfile(id_token, function (err, profile) {
+            lock.getProfile(id_token, function(err, profile) {
                 if (err) {
                     return alert('There was an error getting the profile: ' + err.message);
                 }
                 userProfile = profile;
-                openCards();
+            });
+        }
+        var loginBtn = document.getElementById('loginbutton');
+
+        loginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            lock.show();
+        });
+        function openCards() {
+          var socket = io();
+
+            console.log('cards opening');;
+            socket.on('connect', function(msg) {
+                console.log("Connecting")
+                socket.emit('authenticate', {
+                    token: id_token
+                }); // send the jwt
+            })
+            socket.on('authenticated', function() {
+              console.log("authenticated");
+              document.querySelector('#save').addEventListener('click', function() {
+                  addNotecard(socket);
+              });
             });
         }
 
-function openCards() {
-  console.log('cards opening');;
-      var socket = io();
-        socket
-            .on('connect', function (msg) {
-                    console.log("connected");
-                    socket.emit('authenticate', {token: id_token}); // send the jwt
-                })
-            .on('authenticated', function () {
-
-});
-}
-function addNotecard(){
-  var title = document.querySelector('#icon_prefix2').value
-  var text = document.querySelector('#icon_prefix').value
-  var card = [text, title]
-  socket.emit('card', card)
-  var newCard = document.createElement('div')
-  var cardPop = document.createElement('div')
-  console.log(text);
-  newCard.innerHTML= `<div class="col m2 draggable" data-card-id="4c3">
+        function addNotecard(socket) {
+            var title = document.querySelector('#icon_prefix2').value
+            var text = document.querySelector('#icon_prefix').value
+            var card = [text, title]
+            socket.emit('card', card)
+            var newCard = document.createElement('div')
+            var cardPop = document.createElement('div')
+    newCard.innerHTML =`<div class="col m2 draggable" data-card-id="4c3">
    <div class="card card-medium">
     <div class="card-image blue">
      <br/>
@@ -411,8 +383,8 @@ function addNotecard(){
    </a>
     </div>
    </div>
-  </div>`
-  cardPop.innerHTML = `<div class="modal-content s6">
+  </div>`;
+            cardPop.innerHTML = `<div class="modal-content s6">
    <h4>${title}</h4>
    <div class="row">
    </div>
@@ -422,15 +394,12 @@ function addNotecard(){
     </p>
    </div>
   </div>`
-  document.querySelector("#pls").appendChild(newCard)
-  document.querySelector("#modal2").appendChild(cardPop)
-}
+            document.querySelector("#pls").appendChild(newCard)
+            document.querySelector("#modal2").appendChild(cardPop)
+        }
 
-document.querySelector('#save').addEventListener('click', function() {
-  addNotecard();
-});
-  </script>
+    </script>
 
- </body>
+</body>
 
 </html>
